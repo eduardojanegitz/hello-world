@@ -6,19 +6,6 @@
     column-gap: 3rem;
 }
 
-.link {
-    font-size: 1.25rem;
-    line-height: 1.5rem;
-    color: var(--principal-color-font);
-}
-
-.currentLink {
-    background-color: var(--dark-blue);
-    color: var(--white);
-    padding: 0.55rem;
-    border-radius: 1rem;
-}
-
 @media (max-width: 744px) {
     .nav {
         height: 72px;
