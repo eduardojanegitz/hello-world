@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Banner.module.css";
 import colorCirle from "assets/circulo_colorido.png"
 import myPhoto from "assets/minha_foto.png"
+import Typewriter from "components/Typewriter";
 
 export default function Banner() {
     return (
@@ -11,12 +12,12 @@ export default function Banner() {
                     Hello, World!
                 </h1>
                 <p className={styles.paragraph}>
-                    Meu nome é Eduardo, seja bem-vindo ao Hello, World! 
+                    <Typewriter textScreen="Meu nome é Eduardo, desenvolvedor front-end, seja bem-vindo ao Hello, World! "  hiddenCursor/>
                 </p>
             </div>
             <div className={styles.images}>
                 <img 
-                className={styles.colorCirle} 
+                className={styles.colorCircle} 
                 src={colorCirle} 
                 alt="Circulo colorido"
                 aria-hidden={true}
