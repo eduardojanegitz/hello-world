@@ -1,3 +1,4 @@
+import Footer from "components/Footer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Menu from "./components/Menu";
 import AboutMe from "./pages/AboutMe";
@@ -14,6 +15,8 @@ export default function App() {
       <Route path="aboutme" element={<AboutMe />}/>
       <Route path="*" element={<div>Página não encontrada</div>}/>
     </Routes>
+
+    <Footer />
    </BrowserRouter>
   );
 }
