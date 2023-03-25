@@ -16,9 +16,9 @@ export default function App() {
         <Route path="/" element={<DefaultPage />}>
           <Route index element={<Home />} />
           <Route path="aboutme" element={<AboutMe />} />
-          <Route path="post/:id" element={<Post />} />
         </Route>
 
+        <Route path="post/:id" element={<Post />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
 

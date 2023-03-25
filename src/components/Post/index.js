@@ -1,9 +1,11 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Route, Routes, useParams } from "react-router-dom";
 import posts from "json/posts.json";
 import ModelPost from "components/ModelPost";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import "./Post.css";
+import NotFound from "pages/NotFound";
+import DefaultPage from "components/DefaultPage";
 
 export default function Post() {
     const params = useParams();
@@ -11,21 +13,27 @@ export default function Post() {
         return post.id === Number(params.id);
     })
 
-    if(!post) {
-        return <h1>Post não encontrado...</h1>
+    if (!post) {
+        return <NotFound />
     }
 
     return (
-        <ModelPost
-            coverPhoto={`/assets/posts/${post.id}/capa.png`}
-            title={post.titulo}
-        >
-            <div className="post-markdown-container">
-                <ReactMarkdown>
-                    {post.texto}
-                </ReactMarkdown>
+        <Routes>
+            <Route path="*" element={<DefaultPage />}>
+                <Route index element={
+                    <ModelPost
+                        coverPhoto={`/assets/posts/${post.id}/capa.png`}
+                        title={post.titulo}
+                    >
+                        <div className="post-markdown-container">
+                            <ReactMarkdown>
+                                {post.texto}
+                            </ReactMarkdown>
 
-            </div>
-        </ModelPost>
+                        </div>
+                    </ModelPost>} />
+            </Route>
+        </Routes>
+
     )
 }
