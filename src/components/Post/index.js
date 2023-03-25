@@ -1,10 +1,27 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import styles from "./Post.module.css";
+import posts from "json/posts.json";
+import ModelPost from "components/ModelPost";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import "./Post.css";
 
 export default function Post() {
-    const param = useParams();
+    const params = useParams();
+    const post = posts.find((post) => {
+        return post.id === Number(params.id);
+    })
 
-    console.log(param)
-    return "Post"
+    return (
+        <ModelPost
+            coverPhoto={`/assets/posts/${post.id}/capa.png`}
+            title={post.titulo}
+        >
+            <div className="post-markdown-container">
+                <ReactMarkdown>
+                    {post.texto}
+                </ReactMarkdown>
+
+            </div>
+        </ModelPost>
+    )
 }
