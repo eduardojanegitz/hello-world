@@ -1,4 +1,4 @@
-### React-router-dom
+## React-router-dom
 
 Na rota "/", a estrutura a ser renderizada é: 
 
@@ -13,3 +13,7 @@ Na rota "/aboutme", a estrutura a ser renderizada é:
 ##### `</DefaultPage>`
 
 #### É uma boa forma de aproveitar componentes
+
+### Usar o seletor coringa
+
+#### Foi utilizado o seletor coringa `*`, além do `:` nesse projeto. A grande diferença dos dois é que com o dois pontos você consegue pegar essa informação e utilizá-la com o hook useParams();
