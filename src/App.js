@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Menu from "./components/Menu";
 import AboutMe from "./pages/AboutMe";
 import Home from "./pages/Home";
+import NotFound from "pages/NotFound";
 
 export default function App() {
   return (
@@ -18,9 +19,7 @@ export default function App() {
           <Route path="post/:id" element={<Post />} />
         </Route>
 
-        <Route path="*" element={
-          <div>Página não encontrada</div>
-        } />
+        <Route path="*" element={<NotFound />} />
       </Routes>
 
       <Footer />
