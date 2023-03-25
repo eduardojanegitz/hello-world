@@ -12,11 +12,13 @@ export default function App() {
 
       <Routes>
         <Route path="/" element={<DefaultPage />}>
-          <Route path="/" element={<Home />} />
+          <Route index element={<Home />} />
           <Route path="aboutme" element={<AboutMe />} />
         </Route>
 
-        <Route path="*" element={<div>Página não encontrada</div>} />
+        <Route path="*" element={
+          <div>Página não encontrada</div>
+        } />
       </Routes>
 
       <Footer />
